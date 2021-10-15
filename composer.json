@@ -17,15 +17,11 @@
   ],
   "autoload": {
     "psr-4": {
-      "Arifi\\": "src/Arifi/"
-    }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Arifi\\NumbersToPersianConverter"
-      ]
-    }
+      "Arifi\\": "src/"
+    },
+    "files": [
+      "src/NumbersToPersianConverter.php"
+    ]
   },
   "minimum-stability": "dev"
 }
