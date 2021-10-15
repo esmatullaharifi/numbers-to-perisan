@@ -1,0 +1,31 @@
+{
+  "name": "arifi/numbers-to-perisan",
+  "description": "Convert numbers to Dari/Persian words",
+  "keywords": ["numbers", "dari", "persian", "converte"],
+  "homepage": "https://github.com/esmatullaharifi/numbers-to-persian",
+  "license": "MIT",
+  "type": "library",
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "authors": [
+    {
+      "name": "Esmatullah Arifi",
+      "email": "esmatullaharifi@gmail.com",
+      "role": "developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Arifi\\": "src/Arifi/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Arifi\\NumbersToPersianConverter"
+      ]
+    }
+  },
+  "minimum-stability": "dev"
+}
