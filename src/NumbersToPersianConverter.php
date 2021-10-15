@@ -182,8 +182,7 @@ class NumbersToPersianConverter
         return $words;
     }
 
-    public function convert($number)
-    {
+    private function convertParts ($number) {
         if ($number >= 1 && $number <= 9) {
             $words = $this->oneDigit($number);
         } elseif ($number >= 10 && $number <= 99) {
@@ -201,6 +200,28 @@ class NumbersToPersianConverter
         } else {
             $words = 'Out of range';
         }
+        return $words;
+    }
+
+    /**
+     * Convert numeric input into words
+     *
+     * @param $number 13 digits number only
+     * @return string
+     */
+    public function convert($number)
+    {
+        $numberParts = explode('.', $number);
+
+        $words = $this->convertParts($numberParts[0]);
+        if (isset($numberParts[1])) {
+            $words .= ' عشاریه ';
+            $numberArray = str_split($numberParts[1]);
+            foreach ($numberArray as $num) {
+                $words .= $this->oneDigit($num) . (next($numberArray) ? ' ' : '');
+            }
+        }
+
         return $words;
     }
 }
